@@ -1,5 +1,6 @@
 package com.david.spring.cucumber.beans;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -26,10 +27,13 @@ public class FirefoxWebDriver extends EventFiringWebDriver {
 	};
 
 	static {
-		System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
-		
-		FirefoxOptions capabilities = new FirefoxOptions();
-		webdriver = new FirefoxDriver(capabilities);
+	/*	System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
+
+		FirefoxOptions capabilities = new FirefoxOptions();*/
+
+		WebDriverManager.firefoxdriver().setup();
+		webdriver = new FirefoxDriver();
+		//webdriver = new FirefoxDriver(capabilities);
 		
 		Runtime.getRuntime().addShutdownHook(CLOSE_THREAD);
 	}
