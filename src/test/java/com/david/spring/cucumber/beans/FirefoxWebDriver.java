@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.hpe.alm.octane.OctaneCucumber;
 
 /**
  * Thanks to the project https://github.com/cucumber/cucumber-jvm
