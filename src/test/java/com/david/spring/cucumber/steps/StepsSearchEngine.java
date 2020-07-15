@@ -28,7 +28,7 @@ public class StepsSearchEngine extends ParentSteps {
 	private static final Logger logger = LoggerFactory.getLogger(StepsSearchEngine.class);
 	private DuckduckgoHomePage homePage;
 	private DuckduckgoResultsPage resultsPage;
-	
+
 	@Given("^I am on the search engine home page \"([^\"]*)\"$")
 	public void i_am_on_the_search_engine_home_page(String url) throws Throwable {
 		webdriver.get(url);
@@ -50,6 +50,8 @@ public class StepsSearchEngine extends ParentSteps {
 		List<WebElement> results = resultsPage.getAllResults();
 		Assert.assertTrue(results.size() > 0);
 	}
+
+
 
 	@After
 	public void afterScenario(Scenario scenario) throws IOException {
